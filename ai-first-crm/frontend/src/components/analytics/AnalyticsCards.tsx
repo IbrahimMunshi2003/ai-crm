@@ -5,7 +5,7 @@ import type {
 
 interface Props {
   overview: AnalyticsOverview;
-  insights: Insight;
+  insights?: Insight | null;
 }
 
 export default function AnalyticsCards({

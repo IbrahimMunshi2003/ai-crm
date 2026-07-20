@@ -65,14 +65,7 @@ export default function AnalyticsPage() {
 
       <AnalyticsCards
   overview={overview}
-  insights={
-    insights ?? {
-      total: 0,
-      positive: 0,
-      negative: 0,
-      followups: 0,
-    }
-  }
+  insights={insights}
 />
       
 
