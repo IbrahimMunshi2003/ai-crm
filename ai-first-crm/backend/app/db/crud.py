@@ -1,4 +1,4 @@
-from app.db.database import SessionLocal
+from app.core.database import SessionLocal
 from app.models.interaction import Interaction
 
 

@@ -7,7 +7,7 @@ from langchain_core.messages import HumanMessage, SystemMessage
 from app.graph.prompts import SYSTEM_PROMPT
 from app.llm.groq_client import llm
 
-from app.db.database import SessionLocal
+from app.core.database import SessionLocal
 from app.crud.interaction import create_interaction
 
 
