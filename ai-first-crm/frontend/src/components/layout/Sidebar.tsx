@@ -1,7 +1,6 @@
 import {
   LayoutDashboard,
   Bot,
-  ClipboardList,
   BarChart3,
   CalendarClock,
   Settings,

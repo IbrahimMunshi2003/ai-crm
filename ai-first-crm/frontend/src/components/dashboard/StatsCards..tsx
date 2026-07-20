@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { fetchDashboardStats } from "../../features/dashboard/dashboardSlice";
 
@@ -14,11 +15,19 @@ export default function StatsCards() {
   }, [dispatch]);
 
   if (loading) {
-    return <p>Loading...</p>;
+    return (
+      <p className="text-center text-gray-500">
+        Loading...
+      </p>
+    );
   }
 
   if (!stats) {
-    return <p>No data</p>;
+    return (
+      <p className="text-center text-gray-500">
+        No dashboard data available.
+      </p>
+    );
   }
 
   const cards = [
@@ -28,34 +37,34 @@ export default function StatsCards() {
     },
     {
       title: "Positive",
-      value: stats.positive,
+      value: stats.positiveInteractions,
     },
     {
       title: "Neutral",
-      value: stats.neutral,
+      value: stats.neutralInteractions,
     },
     {
       title: "Negative",
-      value: stats.negative,
+      value: stats.negativeInteractions,
     },
     {
       title: "Follow Ups",
-      value: stats.followups,
+      value: stats.pendingFollowups,
     },
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6">
+    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-5">
       {cards.map((card) => (
         <div
           key={card.title}
-          className="rounded-2xl bg-white shadow p-6"
+          className="rounded-2xl bg-white p-6 shadow-sm border border-slate-200"
         >
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-slate-500">
             {card.title}
           </p>
 
-          <h2 className="text-4xl font-bold mt-2">
+          <h2 className="mt-2 text-4xl font-bold text-slate-800">
             {card.value}
           </h2>
         </div>

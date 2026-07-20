@@ -19,7 +19,10 @@ const interactionSlice = createSlice({
   initialState,
 
   reducers: {
-    setInteraction(state, action: PayloadAction<Interaction>) {
+    setInteraction(
+      _state,
+      action: PayloadAction<Interaction>
+    ) {
       return action.payload;
     },
 
@@ -29,7 +32,9 @@ const interactionSlice = createSlice({
   },
 });
 
-export const { setInteraction, clearInteraction } =
-  interactionSlice.actions;
+export const {
+  setInteraction,
+  clearInteraction,
+} = interactionSlice.actions;
 
 export default interactionSlice.reducer;

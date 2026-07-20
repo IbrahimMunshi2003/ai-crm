@@ -2,10 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 import { getFollowups } from "./followupApi";
 
-import type {
-  Followup,
-  FollowupState,
-} from "./followupTypes";
+import type { FollowupState } from "./followupTypes";
 
 const initialState: FollowupState = {
   loading: false,

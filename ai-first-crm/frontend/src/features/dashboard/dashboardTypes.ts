@@ -1,8 +1,8 @@
 export interface DashboardStats {
   totalInteractions: number;
-  positive: number;
-  neutral: number;
-  negative: number;
+  positiveInteractions: number;
+  neutralInteractions: number;
+  negativeInteractions: number;
   brochuresShared: number;
-  pendingFollowUps: number;
+  pendingFollowups: number;
 }

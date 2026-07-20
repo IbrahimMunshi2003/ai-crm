@@ -13,10 +13,6 @@ export default function AnalyticsPage() {
     loading,
     error,
     overview,
-    products,
-    doctors,
-    monthly,
-    sentiments,
     insights,
   } = useAppSelector((state) => state.analytics);
 
@@ -68,9 +64,16 @@ export default function AnalyticsPage() {
       </div>
 
       <AnalyticsCards
-        overview={overview}
-        insights={insights}
-      />
+  overview={overview}
+  insights={
+    insights ?? {
+      total: 0,
+      positive: 0,
+      negative: 0,
+      followups: 0,
+    }
+  }
+/>
       
 
       {/* Monthly Trend */}
