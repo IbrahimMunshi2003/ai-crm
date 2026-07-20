@@ -1,4 +1,4 @@
-# AI First CRM
+# Medico
 
 An AI-powered CRM assistant for pharmaceutical sales representatives built using **React, FastAPI, LangGraph, LangChain, and Groq LLM**.
 

@@ -57,7 +57,7 @@ export default function AssistantChat() {
           </div>
 
           <h2 className="mb-2 text-3xl font-bold text-slate-800">
-            Welcome to AI First CRM
+            Welcome to Medico
           </h2>
 
           <p className="mb-8 max-w-xl text-slate-500">

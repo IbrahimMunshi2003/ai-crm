@@ -5,13 +5,28 @@ from app.graph.tools import (
     log_interaction,
     recommend_action,
 )
-
+from app.db.database import SessionLocal
+from app.models.interaction import Interaction
 
 def log_node(state):
 
     message = state["messages"][-1].content
 
     state["interaction"] = log_interaction(message)
+    
+    db = SessionLocal()
+
+    interaction = Interaction(**state["interaction"])
+
+    db.add(interaction)
+
+    db.commit()
+
+    db.refresh(interaction)
+
+    db.close()
+    
+    
 
     state["tool_name"] = "Log Interaction"
 

@@ -96,7 +96,7 @@ export default function InteractionField({
           {text === "true" ? "Shared ✓" : "Not Shared"}
         </span>
       ) : (
-        <p className="text-sm leading-6 text-slate-700">
+        <p className="text-sm leading-6 text-slate-700 break-words whitespace-pre-wrap">
           {text}
         </p>
       )}

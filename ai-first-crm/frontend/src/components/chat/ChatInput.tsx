@@ -26,9 +26,7 @@ export default function ChatInput({
   return (
     <div className="space-y-4">
 
-      {/* Suggestions */}
-
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-nowrap overflow-x-auto gap-2 pb-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
 
         {[
           "Met Dr Smith today...",
@@ -39,7 +37,7 @@ export default function ChatInput({
           <button
             key={item}
             onClick={() => setMessage(item)}
-            className="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm text-slate-600 transition hover:border-blue-300 hover:bg-blue-50 hover:text-blue-600"
+            className="shrink-0 rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm text-slate-600 transition hover:border-blue-300 hover:bg-blue-50 hover:text-blue-600"
           >
             {item}
           </button>
@@ -85,9 +83,9 @@ export default function ChatInput({
 
           <button
             onClick={send}
-            className="flex items-center gap-2 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 px-5 py-3 font-medium text-white shadow-lg transition hover:scale-105"
+            className="flex items-center gap-2 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-3 sm:px-5 sm:py-3 font-medium text-white shadow-lg transition hover:scale-105"
           >
-            Send
+            <span className="hidden sm:inline">Send</span>
 
             <SendHorizontal size={18} />
 
