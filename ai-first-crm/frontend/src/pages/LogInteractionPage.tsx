@@ -39,7 +39,10 @@ export default function LogInteractionPage() {
     dispatch(setLoading(true));
 
     try {
-      const response = await sendMessage(message, interaction);
+      const response = await sendMessage(
+        message,
+        interaction
+      );
 
       dispatch(
         addMessage({
@@ -48,8 +51,13 @@ export default function LogInteractionPage() {
         })
       );
 
-      dispatch(setInteraction(response.interaction));
-      dispatch(setCurrentTool(response.tool_name));
+      dispatch(
+        setInteraction(response.interaction)
+      );
+
+      dispatch(
+        setCurrentTool(response.tool_name)
+      );
     } catch (err) {
       console.error(err);
     } finally {
@@ -58,61 +66,74 @@ export default function LogInteractionPage() {
   }
 
   return (
-    <div className="h-screen overflow-hidden bg-gradient-to-br from-slate-100 via-blue-50 to-slate-200">
+    <div className="min-h-screen bg-gradient-to-br from-slate-100 via-blue-50 to-slate-200">
 
       {/* Header */}
 
-      <header className="h-16 sm:h-20 border-b border-slate-200 bg-white/80 backdrop-blur-xl shadow-sm flex items-center justify-between px-4 sm:px-10 shrink-0">
+      <header className="sticky top-0 z-50 h-20 border-b border-slate-200/70 bg-white/80 backdrop-blur-xl shadow-sm">
 
-        <div className="flex items-center gap-3 sm:gap-5">
+        <div className="mx-auto flex h-full max-w-[1700px] items-center justify-between px-6 lg:px-10">
 
-          <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 flex items-center justify-center shadow-lg shrink-0">
+          {/* Logo */}
 
-            <BrainCircuit className="text-white h-5 w-5 sm:h-[26px] sm:w-[26px]" />
+          <div className="flex items-center gap-5">
 
-          </div>
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 shadow-lg">
 
-          <div>
+              <BrainCircuit
+                className="text-white"
+                size={28}
+              />
 
-            <h1 className="text-xl sm:text-3xl font-bold text-slate-800 leading-tight">
-              Medico
-            </h1>
-
-            <p className="hidden sm:block text-sm text-slate-500">
-              Pharmaceutical Sales Intelligence
-            </p>
-
-          </div>
-
-        </div>
-
-        <div className="flex items-center gap-4 sm:gap-8">
-
-          <div className="flex items-center gap-2 rounded-full bg-green-50 px-3 py-1.5 sm:px-4 sm:py-2">
-
-            <span className="h-2 w-2 rounded-full bg-green-500 animate-pulse"></span>
-
-            <span className="hidden sm:inline text-sm font-medium text-green-700">
-              AI Connected
-            </span>
-
-          </div>
-
-          <div className="flex items-center gap-3 sm:gap-4">
-
-            <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white flex items-center justify-center font-bold text-base sm:text-lg shadow-lg shrink-0">
-              IM
             </div>
 
-            <div className="hidden md:block">
+            <div>
 
-              <h3 className="font-semibold text-sm sm:text-base">
-                Ibrahim Munshi
-              </h3>
+              <h1 className="text-3xl font-bold text-slate-800">
+                Medico
+              </h1>
 
-              <p className="text-xs sm:text-sm text-slate-500">
-                Sales Representative
+              <p className="text-sm text-slate-500">
+                AI Pharmaceutical CRM
               </p>
+
+            </div>
+
+          </div>
+
+          {/* Right */}
+
+          <div className="flex items-center gap-8">
+
+            <div className="flex items-center gap-2 rounded-full border border-green-200 bg-green-50 px-5 py-2 shadow-sm">
+
+              <span className="h-2.5 w-2.5 rounded-full bg-green-500 animate-pulse"></span>
+
+              <span className="text-sm font-medium text-green-700">
+                AI Connected
+              </span>
+
+            </div>
+
+            <div className="flex items-center gap-4">
+
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-lg font-bold text-white shadow-lg">
+
+                IM
+
+              </div>
+
+              <div className="hidden md:block">
+
+                <h3 className="font-semibold text-slate-800">
+                  Ibrahim Munshi
+                </h3>
+
+                <p className="text-sm text-slate-500">
+                  Sales Representative
+                </p>
+
+              </div>
 
             </div>
 
@@ -122,28 +143,35 @@ export default function LogInteractionPage() {
 
       </header>
 
-      {/* Body */}
+      {/* Main */}
 
-      <div className="flex flex-col-reverse lg:grid lg:grid-cols-12 gap-6 p-4 sm:p-6 h-[calc(100vh-64px)] sm:h-[calc(100vh-80px)] overflow-y-auto lg:overflow-hidden">
+      <div className="mx-auto grid h-[calc(100vh-80px)] max-w-[1700px] grid-cols-1 gap-8 p-6 lg:grid-cols-12 lg:p-8">
 
         {/* Sidebar */}
 
-        <aside className="lg:col-span-3 rounded-3xl bg-white/80 backdrop-blur-xl border border-white shadow-xl flex flex-col h-[600px] lg:h-full shrink-0">
+        <aside className="lg:col-span-3 flex flex-col overflow-hidden rounded-3xl border border-white/70 bg-white/70 backdrop-blur-xl shadow-2xl">
 
-          <div className="p-4 sm:p-6 border-b shrink-0">
+          <div className="border-b border-slate-200 px-7 py-6">
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-4">
 
-              <ShieldCheck className="text-blue-600" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100">
+
+                <ShieldCheck
+                  className="text-blue-600"
+                  size={24}
+                />
+
+              </div>
 
               <div>
 
-                <h2 className="font-bold text-lg">
+                <h2 className="text-lg font-bold text-slate-800">
                   Interaction Details
                 </h2>
 
                 <p className="text-sm text-slate-500">
-                  Live CRM Record
+                  Auto-filled CRM Information
                 </p>
 
               </div>
@@ -152,7 +180,7 @@ export default function LogInteractionPage() {
 
           </div>
 
-          <div className="flex-1 overflow-y-auto p-4 sm:p-6">
+          <div className="flex-1 overflow-y-auto px-7 py-6">
 
             <InteractionForm />
 
@@ -162,25 +190,30 @@ export default function LogInteractionPage() {
 
         {/* Chat */}
 
-        <main className="lg:col-span-9 rounded-3xl bg-white/80 backdrop-blur-xl border border-white shadow-xl flex flex-col h-[70vh] lg:h-full shrink-0">
+        <main className="lg:col-span-9 flex flex-col overflow-hidden rounded-3xl border border-white/70 bg-white/70 backdrop-blur-xl shadow-2xl">
 
-          <div className="h-16 sm:h-20 border-b px-4 sm:px-8 flex items-center justify-between shrink-0">
+          {/* Chat Header */}
 
-            <div className="flex items-center gap-3 sm:gap-4">
+          <div className="flex h-20 items-center justify-between border-b border-slate-200 px-8">
 
-              <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-2xl bg-blue-100 flex items-center justify-center shrink-0">
+            <div className="flex items-center gap-4">
 
-                <Bot className="text-blue-600" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100">
+
+                <Bot
+                  className="text-blue-600"
+                  size={24}
+                />
 
               </div>
 
               <div>
 
-                <h2 className="font-bold text-base sm:text-lg">
+                <h2 className="text-lg font-bold">
                   AI Assistant
                 </h2>
 
-                <p className="text-xs sm:text-sm text-slate-500">
+                <p className="text-sm text-slate-500">
                   Powered by LangGraph + Groq
                 </p>
 
@@ -188,17 +221,17 @@ export default function LogInteractionPage() {
 
             </div>
 
-            <div className="hidden md:flex gap-3">
+            <div className="hidden lg:flex items-center gap-3">
 
-              <button className="rounded-full bg-blue-50 hover:bg-blue-100 px-4 py-2 text-sm font-medium text-blue-700 transition">
+              <button className="rounded-xl bg-blue-50 px-5 py-2.5 font-medium text-blue-700 transition hover:bg-blue-100">
                 Summary
               </button>
 
-              <button className="rounded-full bg-violet-50 hover:bg-violet-100 px-4 py-2 text-sm font-medium text-violet-700 transition">
+              <button className="rounded-xl bg-violet-50 px-5 py-2.5 font-medium text-violet-700 transition hover:bg-violet-100">
                 Follow Up
               </button>
 
-              <button className="rounded-full bg-amber-50 hover:bg-amber-100 px-4 py-2 text-sm font-medium text-amber-700 transition">
+              <button className="rounded-xl bg-amber-50 px-5 py-2.5 font-medium text-amber-700 transition hover:bg-amber-100">
                 Recommend
               </button>
 
@@ -206,19 +239,27 @@ export default function LogInteractionPage() {
 
           </div>
 
-          <div className="flex-1 overflow-y-auto bg-slate-50 p-4 sm:p-8">
+          {/* Messages */}
+
+          <div className="flex-1 overflow-y-auto bg-gradient-to-b from-slate-50 to-white px-8 py-8">
 
             <AssistantChat />
 
           </div>
 
-          <div className="border-t bg-white px-4 sm:px-6 py-4 sm:py-5 shrink-0">
+          {/* Footer */}
 
-            <div className="mb-3 hidden sm:flex items-center gap-2 text-sm text-slate-500">
+          <div className="border-t border-slate-200 bg-white px-8 py-6">
 
-              <Sparkles size={16} />
+            <div className="mb-4 flex items-center gap-2 text-sm text-slate-500">
 
-              Ask naturally. The AI understands meetings, edits, summaries and recommendations.
+              <Sparkles
+                size={16}
+                className="text-blue-600"
+              />
+
+              AI understands meetings, edits, summaries,
+              follow-ups and recommendations.
 
             </div>
 
