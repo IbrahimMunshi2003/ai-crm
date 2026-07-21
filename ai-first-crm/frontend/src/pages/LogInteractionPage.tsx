@@ -10,6 +10,7 @@ import { useAppDispatch, useAppSelector } from "../app/hooks";
 import AssistantChat from "../components/chat/AssistantChat";
 import ChatInput from "../components/chat/ChatInput";
 import InteractionForm from "../components/interaction/InteractionForm";
+import MobileSidebar from "../components/layout/MobileSidebar";
 
 import {
   addMessage,
@@ -76,9 +77,11 @@ export default function LogInteractionPage() {
 
           {/* Logo */}
 
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-3 md:gap-5">
 
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 shadow-lg">
+            <MobileSidebar />
+
+            <div className="hidden md:flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 shadow-lg">
 
               <BrainCircuit
                 className="text-white"

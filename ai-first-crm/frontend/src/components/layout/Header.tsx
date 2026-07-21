@@ -3,19 +3,25 @@ import {
   Search,
 } from "lucide-react";
 
+import MobileSidebar from "./MobileSidebar";
+
 export default function Header() {
   return (
-    <header className="bg-white h-20 shadow-sm flex items-center justify-between px-8">
+    <header className="bg-white h-20 shadow-sm flex items-center justify-between px-4 md:px-8 shrink-0">
 
-      <div className="flex items-center gap-3 bg-slate-100 rounded-xl px-4 py-2 w-96">
+      <div className="flex items-center gap-4">
+        <MobileSidebar />
 
-        <Search size={18} />
+        <div className="hidden sm:flex items-center gap-3 bg-slate-100 rounded-xl px-4 py-2 w-64 md:w-96">
 
-        <input
-          className="bg-transparent outline-none flex-1"
-          placeholder="Search doctor..."
-        />
+          <Search size={18} />
 
+          <input
+            className="bg-transparent outline-none flex-1"
+            placeholder="Search doctor..."
+          />
+
+        </div>
       </div>
 
       <div className="flex items-center gap-5">
