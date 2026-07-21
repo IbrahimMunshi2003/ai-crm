@@ -13,41 +13,41 @@ export default function AnalyticsCards({
 }: Props) {
   const cards = [
     {
-      title: "Total",
+      title: "Total Interactions",
       value: overview.totalInteractions,
     },
     {
-      title: "Positive",
+      title: "Positive Outcomes",
       value: overview.positiveInteractions,
     },
     {
-      title: "Neutral",
+      title: "Neutral Responses",
       value: overview.neutralInteractions,
     },
     {
-      title: "Negative",
+      title: "Negative Responses",
       value: overview.negativeInteractions,
     },
     {
-      title: "Brochures",
+      title: "Brochures Shared",
       value: overview.brochuresShared,
     },
     {
-      title: "Follow Ups",
+      title: "Pending Follow Ups",
       value: overview.pendingFollowups,
     },
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
       {cards.map((card) => (
         <div
           key={card.title}
-          className="rounded-xl bg-white shadow-md p-6 hover:shadow-xl transition"
+          className="rounded-2xl bg-white border border-[#E5E7EB] shadow-sm p-6 hover:shadow-md transition-shadow duration-200"
         >
-          <p className="text-gray-500">{card.title}</p>
+          <p className="text-sm font-medium text-slate-500 tracking-wide">{card.title}</p>
 
-          <h2 className="text-3xl font-bold mt-3">
+          <h2 className="text-3xl font-bold text-slate-900 mt-2 tracking-tight">
             {card.value}
           </h2>
         </div>

@@ -5,7 +5,7 @@ import Header from "../layout/Header";
 
 export default function MainLayout() {
   return (
-    <div className="flex h-screen w-full bg-slate-100 overflow-x-hidden">
+    <div className="flex h-screen w-full overflow-x-hidden">
 
       <div className="hidden md:flex flex-shrink-0">
         <Sidebar />

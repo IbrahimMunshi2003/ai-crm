@@ -67,215 +67,120 @@ export default function LogInteractionPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-100 via-blue-50 to-slate-200">
-
+    <div className="min-h-screen bg-[#F8F9FA] flex flex-col font-sans">
       {/* Header */}
-
-      <header className="sticky top-0 z-50 h-20 border-b border-slate-200/70 bg-white/80 backdrop-blur-xl shadow-sm">
-
-        <div className="mx-auto flex h-full max-w-[1700px] items-center justify-between px-6 lg:px-10">
-
+      <header className="sticky top-0 z-40 h-16 border-b border-[#E5E7EB] bg-white shrink-0">
+        <div className="mx-auto flex h-full max-w-[1700px] items-center justify-between px-4 md:px-6">
           {/* Logo */}
-
-          <div className="flex items-center gap-3 md:gap-5">
-
+          <div className="flex items-center gap-3 md:gap-4">
             <MobileSidebar />
 
-            <div className="hidden md:flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 shadow-lg">
-
-              <BrainCircuit
-                className="text-white"
-                size={28}
-              />
-
+            <div className="hidden md:flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-white">
+              <BrainCircuit size={18} />
             </div>
 
             <div>
-
-              <h1 className="text-3xl font-bold text-slate-800">
+              <h1 className="text-lg font-bold text-slate-900 tracking-tight leading-none">
                 Medico
               </h1>
-
-              <p className="text-sm text-slate-500">
-                AI Pharmaceutical CRM
+              <p className="text-[11px] text-slate-500 font-medium mt-0.5 uppercase tracking-wider">
+                AI CRM
               </p>
-
             </div>
-
           </div>
 
           {/* Right */}
-
-          <div className="flex items-center gap-8">
-
-            <div className="flex items-center gap-2 rounded-full border border-green-200 bg-green-50 px-5 py-2 shadow-sm">
-
-              <span className="h-2.5 w-2.5 rounded-full bg-green-500 animate-pulse"></span>
-
-              <span className="text-sm font-medium text-green-700">
-                AI Connected
+          <div className="flex items-center gap-6">
+            <div className="hidden sm:flex items-center gap-2 rounded-full border border-green-200 bg-green-50 px-3 py-1">
+              <span className="h-2 w-2 rounded-full bg-green-500 animate-pulse"></span>
+              <span className="text-xs font-medium text-green-700">
+                Connected
               </span>
-
             </div>
 
-            <div className="flex items-center gap-4">
-
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-lg font-bold text-white shadow-lg">
-
+            <div className="flex items-center gap-3">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
                 IM
-
               </div>
-
               <div className="hidden md:block">
-
-                <h3 className="font-semibold text-slate-800">
+                <h3 className="text-sm font-semibold text-slate-800 leading-none">
                   Ibrahim Munshi
                 </h3>
-
-                <p className="text-sm text-slate-500">
-                  Sales Representative
-                </p>
-
               </div>
-
             </div>
-
           </div>
-
         </div>
-
       </header>
 
       {/* Main */}
-
-      <div className="mx-auto grid h-[calc(100vh-80px)] max-w-[1700px] grid-cols-1 gap-8 p-6 lg:grid-cols-12 lg:p-8">
-
+      <div className="mx-auto grid flex-1 w-full max-w-[1700px] grid-cols-1 gap-6 p-4 md:p-6 lg:grid-cols-12 lg:gap-8 min-h-0">
         {/* Sidebar */}
-
-        <aside className="lg:col-span-3 flex flex-col overflow-hidden rounded-3xl border border-white/70 bg-white/70 backdrop-blur-xl shadow-2xl">
-
-          <div className="border-b border-slate-200 px-7 py-6">
-
-            <div className="flex items-center gap-4">
-
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100">
-
-                <ShieldCheck
-                  className="text-blue-600"
-                  size={24}
-                />
-
-              </div>
-
-              <div>
-
-                <h2 className="text-lg font-bold text-slate-800">
-                  Interaction Details
-                </h2>
-
-                <p className="text-sm text-slate-500">
-                  Auto-filled CRM Information
-                </p>
-
-              </div>
-
+        <aside className="lg:col-span-4 xl:col-span-3 flex flex-col overflow-hidden rounded-2xl border border-[#E5E7EB] bg-white shadow-sm">
+          <div className="border-b border-slate-100 px-6 py-5 flex items-center gap-3">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-50 border border-slate-100 text-slate-600">
+              <ShieldCheck size={20} />
             </div>
-
+            <div>
+              <h2 className="text-base font-bold text-slate-900 tracking-tight">
+                Details
+              </h2>
+              <p className="text-xs text-slate-500 font-medium">
+                Auto-filled CRM Data
+              </p>
+            </div>
           </div>
 
-          <div className="flex-1 overflow-y-auto px-7 py-6">
-
+          <div className="flex-1 overflow-y-auto px-6 py-5">
             <InteractionForm />
-
           </div>
-
         </aside>
 
         {/* Chat */}
-
-        <main className="lg:col-span-9 flex flex-col overflow-hidden rounded-3xl border border-white/70 bg-white/70 backdrop-blur-xl shadow-2xl">
-
+        <main className="lg:col-span-8 xl:col-span-9 flex flex-col overflow-hidden rounded-2xl border border-[#E5E7EB] bg-white shadow-sm">
           {/* Chat Header */}
-
-          <div className="flex h-20 items-center justify-between border-b border-slate-200 px-8">
-
-            <div className="flex items-center gap-4">
-
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100">
-
-                <Bot
-                  className="text-blue-600"
-                  size={24}
-                />
-
+          <div className="flex h-16 shrink-0 items-center justify-between border-b border-slate-100 px-6">
+            <div className="flex items-center gap-3">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                <Bot size={20} />
               </div>
-
               <div>
-
-                <h2 className="text-lg font-bold">
+                <h2 className="text-sm font-bold text-slate-900">
                   AI Assistant
                 </h2>
-
-                <p className="text-sm text-slate-500">
-                  Powered by LangGraph + Groq
+                <p className="text-xs text-slate-500 font-medium">
+                  GPT-4 Powered
                 </p>
-
               </div>
-
             </div>
 
-            <div className="hidden lg:flex items-center gap-3">
-
-              <button className="rounded-xl bg-blue-50 px-5 py-2.5 font-medium text-blue-700 transition hover:bg-blue-100">
+            <div className="hidden lg:flex items-center gap-2">
+              <button className="rounded-lg border border-[#E5E7EB] bg-white px-3 py-1.5 text-xs font-medium text-slate-600 hover:bg-slate-50 transition-colors">
                 Summary
               </button>
-
-              <button className="rounded-xl bg-violet-50 px-5 py-2.5 font-medium text-violet-700 transition hover:bg-violet-100">
+              <button className="rounded-lg border border-[#E5E7EB] bg-white px-3 py-1.5 text-xs font-medium text-slate-600 hover:bg-slate-50 transition-colors">
                 Follow Up
               </button>
-
-              <button className="rounded-xl bg-amber-50 px-5 py-2.5 font-medium text-amber-700 transition hover:bg-amber-100">
+              <button className="rounded-lg border border-[#E5E7EB] bg-white px-3 py-1.5 text-xs font-medium text-slate-600 hover:bg-slate-50 transition-colors">
                 Recommend
               </button>
-
             </div>
-
           </div>
 
           {/* Messages */}
-
-          <div className="flex-1 overflow-y-auto bg-gradient-to-b from-slate-50 to-white px-8 py-8">
-
+          <div className="flex-1 overflow-y-auto bg-white px-6 py-6">
             <AssistantChat />
-
           </div>
 
           {/* Footer */}
-
-          <div className="border-t border-slate-200 bg-white px-8 py-6">
-
-            <div className="mb-4 flex items-center gap-2 text-sm text-slate-500">
-
-              <Sparkles
-                size={16}
-                className="text-blue-600"
-              />
-
-              AI understands meetings, edits, summaries,
-              follow-ups and recommendations.
-
+          <div className="border-t border-slate-100 bg-white px-6 py-5 shrink-0">
+            <div className="mb-3 flex items-center gap-1.5 text-xs font-medium text-slate-500">
+              <Sparkles size={14} className="text-primary" />
+              AI understands meetings, edits, summaries, follow-ups and recommendations.
             </div>
-
-            <ChatInput
-              onSend={handleSend}
-            />
-
+            <ChatInput onSend={handleSend} />
           </div>
-
         </main>
-
       </div>
-
     </div>
   );
 }

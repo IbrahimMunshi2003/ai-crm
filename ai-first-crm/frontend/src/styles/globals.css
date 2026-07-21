@@ -2,6 +2,15 @@
 
 @plugin "@tailwindcss/typography";
 
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --color-primary: #10A37F;
+  --color-primary-hover: #0D8C6D;
+}
+
 html, body {
   overflow-x: hidden;
+  font-family: var(--font-sans);
+  background-color: #F8F9FA;
+  color: #111827;
 }
