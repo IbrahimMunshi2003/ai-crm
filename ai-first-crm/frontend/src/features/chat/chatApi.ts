@@ -1,17 +1,17 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "http://127.0.0.1:8000",
+  baseURL: import.meta.env.VITE_API_URL,
 });
 
 export async function sendMessage(
-    message: string,
-    interaction: any
+  message: string,
+  interaction: any
 ) {
-    const { data } = await api.post("/chat/", {
-        message,
-        interaction,
-    });
+  const { data } = await api.post("/chat/", {
+    message,
+    interaction,
+  });
 
-    return data;
+  return data;
 }
